@@ -3,7 +3,7 @@ def quick_sort(sequence):
     if length <= 1:
         return sequence
     else:
-        pivot = sequence.pop()
+        pivot = sequence.pop() # 0
     items_greater = []
     items_lower = []
     for item in sequence:
@@ -11,9 +11,14 @@ def quick_sort(sequence):
             items_greater.append(item)
         else:
             items_lower.append(item)
-    return quick_sort(items_lower) + [pivot] + quick_sort(items_greater)
+    #print("greater {}").format(items_greater)
+    #print("lower {}").format(items_lower)
+    #print("==============================")
+    x = quick_sort(items_lower) + [pivot] + quick_sort(items_greater)
+    print(x)
+    return x
 
+# items_greater = [5,6,8,9]
 
-
-
-print(quick_sort([5,6,7,8,9,8,7,6,5,6,7,8,9,0]))
+# items_lower = [0]
+print(quick_sort([5,9,0]))
